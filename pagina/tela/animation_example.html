@@ -1,0 +1,62 @@
+<html>
+
+<head>
+    <style>
+        #image {
+            height: 192px;
+            width: 128px;
+            background:
+                url('astronauta_sprite.png') 0px 0px;
+        }
+    </style>
+    <script language="javascript">
+        var astroWidth = 128;
+        var astroHeight = 192;
+        var linha = 0;
+        var position = 0;
+        var step = 0;
+        var timer;
+        const interval = 100; //100 ms of interval for the setInterval()
+        
+        function animateIteration() {
+            document.getElementById("image").style.backgroundPosition = '-' + position + 'px ' + linha*astroHeight + 'px';
+            if (position < astroWidth*4) { position = position + astroWidth; }
+            else { position = astroWidth; }
+            step++;
+            if (step > 8) {
+                clearInterval(timer);
+                console.log("Parei! step: ", step);
+                return;
+            }
+            console.log("step: ", step);
+        }
+
+        function animateMe() {
+            step = 0;
+            position = 0;
+            timer = setInterval(animateIteration, interval);
+        }
+
+        function turnMe() {
+            linha++;
+            if (linha >= 4) {
+                linha = 0;
+            }
+            console.log("linha: ", linha);
+            document.getElementById("image").style.backgroundPosition = '-' + position + 'px ' + linha*astroHeight + 'px';
+        }
+
+        function animateScript() {
+            document.getElementById("image").style.backgroundPosition = '-' + astroWidth + 'px ' + linha*astroHeight + 'px';
+        }
+    </script>
+</head>
+
+<body>
+    <div id="demo">
+        <p id="image" onmouseover="turnMe()" onclick="animateMe()"> </p>
+    </div>
+</body>
+<script>
+</script>
+</html>
