@@ -1,6 +1,3 @@
-
-
-
 var create_element = true;
 var n_event = 1;
 
