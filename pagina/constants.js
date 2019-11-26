@@ -9,6 +9,6 @@ const buttons = {
     },
     "btnLoop": {
       "class": "loop-btn",
-      "text": "Loop"
+      "text": "Loop <span class='sup'>2</span>"
     }
   }
