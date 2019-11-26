@@ -1,0 +1,34 @@
+[
+    {
+        "command": "step"
+    },
+    {
+        "command": "turn"
+    },
+    {
+        "loop": {
+            "iterations": 2,
+            "commands": [
+                {
+                    "command": "step"
+                },
+                {
+                    "command": "turn"
+                },
+                {
+                    "loop": {
+                        "iterations": 4,
+                        "commands": [
+                            {
+                                "command": "step"
+                            },
+                            {
+                                "command": "turn"
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    }
+]
