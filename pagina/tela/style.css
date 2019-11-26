@@ -1,0 +1,47 @@
+#container_geral{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: visible;
+    height: 100%;
+}
+
+#container{
+    position: relative;
+    overflow: visible;
+}
+.tabuleiro{
+    display: block;
+}
+.linha{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tile{
+    display: flex;
+    margin: 2px;
+    box-sizing: border-box;
+    height: 38px;
+    width: 38px;
+    background-color: rgba(255, 69, 0, 0.7);
+}
+.tile.vazio{
+    background-color: rgba(0, 0, 0, 0);
+}
+.personagem{
+    width: 40px;
+    height: 60px;
+    position: absolute;
+    left: 0px;
+    top:0px;
+    margin-top: -25px;
+    margin-left: 0px;
+}
+.personagem .sprite{
+    background-size: 400% 400%;
+    width: 40px;
+    height: 60px;
+    background-image: url("../assets/astronauta_sprite.png");
+}
