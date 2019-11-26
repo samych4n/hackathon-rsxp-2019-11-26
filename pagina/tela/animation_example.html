@@ -7,11 +7,12 @@
             width: 128px;
             background:
                 url('astronauta_sprite.png') 0px 0px;
+            background-size: 400% 400%;
         }
     </style>
     <script language="javascript">
-        var astroWidth = 128;
-        var astroHeight = 192;
+        var astroWidth = 30;
+        var astroHeight = astroWidth * 1.5;
         var linha = 0;
         var position = 0;
         var step = 0;
@@ -58,5 +59,7 @@
     </div>
 </body>
 <script>
+    document.getElementById("image").style.width = astroWidth + 'px';
+    document.getElementById("image").style.height = astroWidth*1.5 + 'px';
 </script>
 </html>
