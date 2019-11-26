@@ -1,3 +1,34 @@
+class Item {
+    static createItem(mapa, $tabuleiro) {
+        const itens = [];
+        mapa.forEach((linha, idxLinha) => {
+            linha.forEach((tile, idxtile) => {
+                if (tile == "g") {
+                    const $gas = $("<div>", { class: "gas" })
+                    const $sprite = $("<div>", { class: "sprite" });
+                    $gas.append($sprite);
+                    $tabuleiro.append($gas);
+                    if(!itens[idxLinha])itens[idxLinha] = [];
+                    itens[idxLinha][idxtile] = $gas;
+                    $gas.css("top", idxLinha * 42);
+                    $gas.css("left", idxtile * 42);
+                }
+                if (tile == "f") {
+                    const $foguete = $("<div>", { class: "foguete" })
+                    const $sprite = $("<div>", { class: "sprite" });
+                    $foguete.append($sprite);
+                    $tabuleiro.append($foguete);
+                    if(!itens[idxLinha])itens[idxLinha] = [];
+                    itens[idxLinha][idxtile] = $foguete;
+                    $foguete.css("top", idxLinha * 42);
+                    $foguete.css("left", idxtile * 42);
+                }
+            });
+        });
+        return itens;
+    }
+}
+
 class Personagem {
 
     static createPersonagens(mapa, $tabuleiro) {
