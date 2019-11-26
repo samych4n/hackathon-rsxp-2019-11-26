@@ -16,7 +16,6 @@ $.map(buttons, function (button, id) {
       if(create_element){
         create_element = false;
         var rel = $(this).attr('rel');
-        //add_element( rel, '<div class="btn ">tst</div>');
       }
     }
   });
@@ -72,7 +71,6 @@ function reset_buttons(){
         if(create_element){
           create_element = false;
           var rel = $(this).attr('rel');
-          //add_element( rel, '<div class="btn ">tst</div>');
         }
       }
     });
