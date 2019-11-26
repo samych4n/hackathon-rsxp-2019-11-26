@@ -5,7 +5,7 @@
 }
 
 .bg-gray{
-  background-color: #999;
+  background-color: #efefef;
 }
 
 .border-gray{
@@ -38,10 +38,11 @@
 .btn{
   padding: 2px 10px;
   width: 80%;
-  border-radius: 20px;
+  border-radius: 6px;
   text-align: center;
   z-index: 9999;
   position: inherit;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .btn:hover{
@@ -49,7 +50,7 @@
 }
 
 .turn-btn{
-  background-color: rgb(255, 46, 46);
+  background-color: rgb(0, 38, 255);
   color:white;
 }
 
@@ -59,7 +60,7 @@
 }
 
 .loop-btn{
-  background-color: rgb(255, 174, 0);
+  background-color: rgb(255, 152, 17);
   color:white;
 }
 
@@ -69,7 +70,7 @@
   padding: 10px 2px;
   font-size: 20px;
   text-align: center;
-  background-color: white;
+  /* background-color: white;  */
   color:#333;
   margin-bottom: 30px;
 }
@@ -79,12 +80,14 @@
   width: 100px;
   height: 450px;
   padding:10px;
+  border-radius: 10px;
 }
 
 #comandos{
   width: 100px;
   height: 450px;
   padding:10px;
+  border-radius: 10px;
 }
 
 #tela{
@@ -93,4 +96,5 @@
   height: 450px;
   background-size: cover;
   background-image: url("assets/space.jpg");
+  border-radius: 10px;
 }
