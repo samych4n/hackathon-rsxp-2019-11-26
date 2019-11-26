@@ -1,0 +1,48 @@
+*{
+  margin: 0px;
+  padding: 0px;
+  overflow: hidden;
+}
+
+.bg-gray{
+  background-color: #999;
+}
+
+.border-gray{
+  border: 1px solid #aaa;
+}
+
+.container{
+  display: flex;
+  align-items:center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.ml-1{
+  margin-left: 10px;
+}
+
+.col{
+  display:flex;
+  margin-bottom:10px;
+}
+
+#opcoes{
+  display: block;
+  width: 80px;
+  height: 300px;
+  padding:10px;
+}
+
+#comandos{
+  width: 80px;
+  height: 300px;
+  padding:10px;
+}
+
+#tela{
+  padding: 10px;
+  width: 300px;
+  height: 300px;
+}
