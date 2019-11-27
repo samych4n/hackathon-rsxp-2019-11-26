@@ -1,61 +1,57 @@
 <html>
-
-<head>
-
-    <link rel="stylesheet" href="./plugins/jquery-ui-1.12.1/jquery-ui.css">
+  <head>
+    <link rel="stylesheet" href="./plugins/jquery-ui-1.12.1/jquery-ui.css" />
     <script src="./plugins/jquery-3.4.1.min.js"></script>
     <script src="./plugins/jquery-ui-1.12.1/jquery-ui.min.js"></script>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <script src="./constants.js"></script>
     <script src="./class/Mapa.js"></script>
     <script src="./class/Personagem.js"></script>
+  </head>
 
-</head>
-
-<body>
+  <body>
     <div class="curtain">
-	
-        <!-- The component wrapper -->
-        <div class="curtain__wrapper">
-            <input type="checkbox" class="curtainController" checked>
-            <!-- The left curtain panel -->
-            <div class="curtain__panel curtain__panel--left">
-        
-            </div> <!-- curtain__panel -->
+      <!-- The component wrapper -->
+      <div class="curtain__wrapper">
+        <input type="checkbox" class="curtainController" checked />
+        <!-- The left curtain panel -->
+        <div class="curtain__panel curtain__panel--left"></div>
+        <!-- curtain__panel -->
 
-            <div class="centered curtain__prize">
-                <div class="container">
-                    <div class="col">
-                        <div id="tela"></div>
-                    </div>
-                    <div class="col ml-1">
-                        <div id="comandos" class="bg-gray"></div>
-                    </div>
-                    <div class="col ml-1">
-                        <div id="opcoes" class="bg-gray"></div>
-                    </div>
-                    <div class="wrap ml-2">
-                        <div id="play" class="btn-action">
-                            <img class="icon-play" src="./assets/play.png">
-                            <span class="tooltiptext">Play script</span>
-                        </div>
-                        <div id="reset" class="btn-action">
-                            <img class="icon-reset" src="./assets/reset.png">
-                            <span class="tooltiptext">Reset script</span>
-                        </div>
-                    </div>
-                </div>
+        <div class="centered curtain__prize">
+          <div class="container">
+            <div class="col">
+              <div id="tela"></div>
             </div>
-        
-            <div class="curtain__panel curtain__panel--right">
-        
-            </div> <!-- curtain__panel -->
-                
-        </div> <!-- curtain__wrapper -->
-            
-    </div> <!-- curtain -->
-    
-    <script src="./index.js"></script>
-</body>
+            <div class="col ml-1">
+              <div id="comandos" class="bg-gray"></div>
+            </div>
+            <div class="col ml-1">
+              <div id="opcoes" class="bg-gray"></div>
+            </div>
+            <div class="wrap ml-2">
+              <div id="play" class="btn-action">
+                <img class="icon-play" src="./assets/play.png" />
+                <span class="tooltiptext">Play script</span>
+              </div>
+              <div id="reset" class="btn-action">
+                <img class="icon-reset" src="./assets/reset.png" />
+                <span class="tooltiptext">Reset script</span>
+              </div>
+            </div>
+            <div class="col">
+              <div id="codigo"></div>
+            </div>
+          </div>
+        </div>
 
+        <div class="curtain__panel curtain__panel--right"></div>
+        <!-- curtain__panel -->
+      </div>
+      <!-- curtain__wrapper -->
+    </div>
+    <!-- curtain -->
+
+    <script src="./index.js"></script>
+  </body>
 </html>
