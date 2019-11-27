@@ -33,10 +33,12 @@ function refresh(levelName, refreshTime, gameStatus) {
         $("#comandos").load("./comandos");
         $("#opcoes").load("./opcoes");
         $("#tela").load("./tela");
-        $(".curtain-text").hide();
-        $(".curtain-text").css('background-color', 'transparent');
-        $("#lbl_round_status").html("");
-        $(".curtainController").prop("checked", false);
+        if (theGGamestatus != 3) {
+          $(".curtain-text").hide();
+          $(".curtain-text").css('background-color', 'transparent');
+          $("#lbl_round_status").html("");
+          $(".curtainController").prop("checked", false);
+        }
       });
     }, refreshTime);
   }, timer);
