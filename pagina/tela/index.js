@@ -31,7 +31,7 @@ var commandos = [
 
     function index(board) {
         $("#play").off("click");
-        $("#play").on("click",function(){play()});
+        $("#play").on("click",function(){$("#play").off("click");play();});
         const myBoard = new Mapa(board)
         $("#container").html(myBoard.drawMap());
         personagens = Personagem.createPersonagens(board, $("#container"));
