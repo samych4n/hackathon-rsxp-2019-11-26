@@ -1,0 +1,17 @@
+{
+    "name":"Level 8!",
+    "map":[
+        ["x", "o", "o", "x", "x"],
+        ["x", "o", "f", "p", "o"],
+        ["g", "o", "x", "o", "o"],
+        ["o", "o", "o", "o", "x"],
+        ["x", "x", "o", "o", "x"]
+    ],
+    "commands":[
+        "step",
+        "turn",
+        "loop",
+        "loop4"
+    ],
+    "orientacao":3
+}
