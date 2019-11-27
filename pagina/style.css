@@ -89,6 +89,10 @@
   height: 450px;
   padding: 10px;
   border-radius: 10px;
+  background-image: url('assets/drag-here.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 75%;
 }
 
 #comandos {
@@ -96,6 +100,10 @@
   height: 450px;
   padding: 10px;
   border-radius: 10px;
+  background-image: url('assets/drop-here.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 90%;
 }
 
 #tela {
