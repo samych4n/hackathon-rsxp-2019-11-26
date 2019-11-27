@@ -6,24 +6,28 @@
 function refresh(levelName, refreshTime, gameStatus) {
   theGGamestatus = gameStatus || 0;
   console.log("theGGamestatus: ", theGGamestatus);
+  timer = 3000;
   switch (theGGamestatus) {
     case 0: 
       $("#lbl_round_status").html("");
+      timer = 0;
     break;
     case 1: 
     $(".curtain-text").css('background-color', '#006600');
     $("#lbl_round_status").html("Parabéns, astronauta!<br>Você decolou!!!");
+    timer = 3000;
     break;
     case 2: 
     $(".curtain-text").css('background-color', '#660000');
     $("#lbl_round_status").html("Oops! Tente novamente.");
+    timer = 500;
     break;
     case 3: 
     $(".curtain-text").css('background-color', '#006600');
     $("#lbl_round_status").html("Parabéns, astronauta!<br>Você está pronto para seguir<br>para o próximo nível!!!");
+    timer = 3000;
     break;
   }
-  timer = theGGamestatus == 0 ? 0 : 3000;
   setTimeout(() => {
     $(".curtainController").prop("checked", true);
     $(".curtain-text").fadeIn(3000);

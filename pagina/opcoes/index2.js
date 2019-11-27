@@ -10,24 +10,27 @@ $('.btn').draggable({
     stack: "#draggable",
     helper: 'clone'
 });
-$('#draggable').droppable({
-    accept: ".btn",
-    greedy: true,
-    drop: function (event, ui) {
-        var droppable = $(this);
-        if(ui.helper.is(".dropped")) {
-            return false;
+setInterval(() => {
+    $('#draggable').droppable({
+        accept: ".btn",
+        greedy: true,
+        drop: function (event, ui) {
+            var droppable = $(this);
+            if(ui.helper.is(".dropped")) {
+                return false;
+            }
+            var draggable = ui.draggable;
+            ui.helper.addClass(".dropped");
+            var clone = draggable.clone();
+            clone.appendTo(droppable);
+            if(clone.hasClass("loop-btn") || clone.hasClass("loop4-btn")){
+                createHandler(clone);
+            }
+            enCode(createCommands($("#draggable")))
         }
-        var draggable = ui.draggable;
-        ui.helper.addClass(".dropped");
-        var clone = draggable.clone();
-        clone.appendTo(droppable);
-        if(clone.hasClass("loop-btn") || clone.hasClass("loop4-btn")){
-            createHandler(clone);
-        }
-        enCode(createCommands($("#draggable")))
-    }
-})
+    })
+}, 500);
+
 function createHandler(clone){
     clone.droppable({
         accept: ".btn",
