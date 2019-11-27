@@ -41,7 +41,7 @@
 
 .btn {
   padding: 2px 10px;
-  width: 70px;
+  min-width: 70px;
   border-radius: 6px;
   text-align: center;
   z-index: 9999;
@@ -139,7 +139,7 @@
   float: left; /* Makes sure panels are side-by-side */
   position: relative; /* Needed to define the z-index */
   z-index: 2; /* Places the panels in front of the prize */
-  transition: all 0.6s ease-out; /* Animates the sliding transition */
+  transition: all 1s ease-out; /* Animates the sliding transition */
 }
 
 .curtain__prize {
@@ -211,7 +211,7 @@ input[type="checkbox"]:checked ~ div.curtain__panel--right {
 .btn-action .tooltiptext {
   visibility: hidden;
   width: 120px;
-  background-color: black;
+  background-color: rgba(0,0,0,0.5);
   color: #fff;
   text-align: center;
   border-radius: 4px;
@@ -224,6 +224,10 @@ input[type="checkbox"]:checked ~ div.curtain__panel--right {
 
 .btn-action:hover .tooltiptext {
   visibility: visible;
+}
+
+#code pre{
+  font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
 }
 
 /* Keyframes animation */
