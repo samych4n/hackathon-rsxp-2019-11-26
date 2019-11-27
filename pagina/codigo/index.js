@@ -45,10 +45,10 @@ function retCode(commands, space = 0) {
     if (item.command) {
       switch (item.command) {
         case "step":
-          text += `${retSpace(space)}step() &#10;`;
+          text += `${retSpace(space)}step(); &#10;`;
           break;
         case "turn":
-          text += `${retSpace(space)}turn() &#10;`;
+          text += `${retSpace(space)}turn(); &#10;`;
           break;
         default:
           break;
