@@ -1,10 +1,10 @@
-$.map(buttons, function (button, id) {
+level.commands.forEach (command => {
     $("#opcoes").append(`
       <div class="wrap">
-        <div class="btn ${button.class}"> ${button.text}</div>
+        <div class="btn ${buttons[command].class}"> ${buttons[command].text}</div>
       </div>
     `);
-})
+});
 $('.btn').draggable({
     revert: "invalid",
     stack: "#draggable",

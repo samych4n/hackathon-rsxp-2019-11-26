@@ -62,7 +62,7 @@ class Personagem {
         this.hasGas = false;
 
         this.timer;
-        this.orientacao = 0;
+        this.orientacao = 3;
         this.x = x;
         this.y = y;
         this.$personagem = $personagem;

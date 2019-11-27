@@ -1,0 +1,14 @@
+{
+    "name":"Level 2!",
+    "map":[
+        ["p", "o", "g"],
+        ["x", "x", "o"],
+        ["x", "x", "f"]
+    ],
+    "commands":[
+        "step",
+        "turn",
+        "loop",
+        "loop4"
+    ]
+}

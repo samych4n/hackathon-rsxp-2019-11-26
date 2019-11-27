@@ -1,14 +1,18 @@
 const buttons = {
-    "btnTurn": {
+    "turn": {
       "class": "turn-btn",
       "text": "Turn"
     },
-    "btnStep": {
+    "step": {
       "class": "step-btn",
       "text": "Step"
     },
-    "btnLoop": {
+    "loop": {
       "class": "loop-btn",
       "text": "Loop <span class='sup'>2</span>"
+    },
+    "loop4":{
+      "class": "loop4-btn",
+      "text": "Loop <span class='sup'>4</span>"
     }
   }
