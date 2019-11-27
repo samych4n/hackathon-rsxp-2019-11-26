@@ -100,7 +100,6 @@ class Personagem {
     }
 
     triggerMove(movimenta) {
-        console.log("aqui")
         if (movimenta)
             switch (this.orientacao) {
                 case 0: //baixo
@@ -223,7 +222,6 @@ function makeCommandIterator(command,start = 0, end = Infinity, step = 1) {
 }
 
 function makeLoopIterator(loopInfo) {
-    console.log(loopInfo);
     let iterations = loopInfo.iterations -1;
     let command = loopInfo.commands;
 
@@ -251,7 +249,6 @@ function makeLoopIterator(loopInfo) {
             }
             if(iterations > 0){
                 iterations--;
-                console.log("aaaaaa")
                 i = 0;
                 return this.next();
             }
