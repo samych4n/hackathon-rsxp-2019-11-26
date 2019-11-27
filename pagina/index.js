@@ -3,11 +3,11 @@ function refresh(levelName, refreshTime) {
   setTimeout(() => {
     $.getJSON(`levels/${levelName}.json`, function(lvl) {
       level = lvl;
+      $("#codigo").load("./codigo");
       $("#comandos").load("./comandos");
       $("#opcoes").load("./opcoes");
       $("#tela").load("./tela");
       $(".curtainController").prop("checked", false);
-      $("#codigo").load("./codigo");
     });
   }, refreshTime);
 }

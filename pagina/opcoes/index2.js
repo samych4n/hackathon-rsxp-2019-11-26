@@ -22,9 +22,10 @@ $('#draggable').droppable({
         ui.helper.addClass(".dropped");
         var clone = draggable.clone();
         clone.appendTo(droppable);
-        if(clone.hasClass("loop-btn")){
+        if(clone.hasClass("loop-btn") || clone.hasClass("loop4-btn")){
             createHandler(clone);
         }
+        enCode(createCommands($("#draggable")))
     }
 })
 function createHandler(clone){
@@ -40,9 +41,10 @@ function createHandler(clone){
             var draggable = ui.draggable;
             var clone = draggable.clone();
             clone.appendTo(droppable);
-            if(clone.hasClass("loop-btn")){
+            if(clone.hasClass("loop-btn") || clone.hasClass("loop4-btn")){
                 createHandler(clone);
             }
+            enCode(createCommands($("#draggable")))
         }
     })
 }

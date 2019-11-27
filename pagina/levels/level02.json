@@ -8,5 +8,6 @@
     "commands":[
         "step",
         "turn"
-    ]
+    ],
+    "orientacao":2
 }
