@@ -89,6 +89,22 @@
   height: 450px;
   padding: 10px;
   border-radius: 10px;
+  background-image: url('assets/drag-here.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 75%;
+}
+
+#opcoes::after {
+  content: "";
+  background: url(image.jpg);
+  opacity: 0.5;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;   
 }
 
 #comandos {
@@ -96,6 +112,10 @@
   height: 450px;
   padding: 10px;
   border-radius: 10px;
+  background-image: url('assets/drop-here.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 90%;
 }
 
 #tela {
