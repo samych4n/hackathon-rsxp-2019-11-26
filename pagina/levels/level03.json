@@ -8,8 +8,7 @@
     "commands":[
         "step",
         "turn",
-        "loop",
-        "loop4"
+        "loop"
     ],
     "orientacao":3
 }
