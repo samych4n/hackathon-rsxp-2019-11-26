@@ -14,7 +14,8 @@
     "commands":[
         "step",
         "turn",
-        "loop"
+        "loop",
+        "loop4"
     ],
     "orientacao":0
 }
