@@ -29,6 +29,7 @@ function refresh(levelName, refreshTime, gameStatus) {
     setTimeout(() => {
       $.getJSON(`levels/${levelName}.json`, function(lvl) {
         level = lvl;
+        $("#codigo").load("./codigo");
         $("#comandos").load("./comandos");
         $("#opcoes").load("./opcoes");
         $("#tela").load("./tela");
@@ -36,10 +37,10 @@ function refresh(levelName, refreshTime, gameStatus) {
         $(".curtain-text").css('background-color', 'transparent');
         $("#lbl_round_status").html("");
         $(".curtainController").prop("checked", false);
-        $("#codigo").load("./codigo");
       });
     }, refreshTime);
   }, timer);
+
 }
 
 $.getJSON(`levels/levelSequence.json`, function(lvlsequence) {

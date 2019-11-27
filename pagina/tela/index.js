@@ -12,6 +12,7 @@ function index(board) {
 }
 function play() {
     const commandos = createCommands($("#draggable"));
+    $("#reset").off("click");
     personagens.forEach(personagem => {
         personagem.executeCommandos(commandos);
     });
