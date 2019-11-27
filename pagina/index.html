@@ -13,21 +13,38 @@
 </head>
 
 <body>
+    <div class="curtain">
+	
+        <!-- The component wrapper -->
+        <div class="curtain__wrapper">
+            <input type="checkbox" class="curtainController" checked>
+            <!-- The left curtain panel -->
+            <div class="curtain__panel curtain__panel--left">
+        
+            </div> <!-- curtain__panel -->
 
-    <div class="centered">
-        <div class="container">
-            <div class="col">
-                <div id="tela"></div>
+            <div class="centered curtain__prize">
+                <div class="container">
+                    <div class="col">
+                        <div id="tela"></div>
+                    </div>
+                    <div class="col ml-1">
+                        <div id="comandos" class="bg-gray"></div>
+                    </div>
+                    <div class="col ml-1">
+                        <div id="opcoes" class="bg-gray"></div>
+                    </div>
+                </div>
             </div>
-            <div class="col ml-1">
-                <div id="comandos" class="bg-gray"></div>
-            </div>
-            <div class="col ml-1">
-                <div id="opcoes" class="bg-gray"></div>
-            </div>
-        </div>
-    </div>
-
+        
+            <div class="curtain__panel curtain__panel--right">
+        
+            </div> <!-- curtain__panel -->
+                
+        </div> <!-- curtain__wrapper -->
+            
+    </div> <!-- curtain -->
+    
     <script src="./index.js"></script>
 </body>
 
