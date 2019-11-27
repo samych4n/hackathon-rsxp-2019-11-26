@@ -48,15 +48,18 @@ class Personagem {
     }
 
     constructor($personagem, x, y, mapa) {
+        this.timePerCommand = 800;
         this.clear = false;
         this.tileSize = 42;
         this.spriteWidth = 40;
         this.spriteHeight = this.spriteWidth * 1.5;
         this.spriteQuadros = 4;
         this.quadro = 0;
+        this.hasCommand = false;
 
         this.passosPerMove = 2;
-        this.timeToMove = 1000;
+        this.timeToMove = 600;
+        this.hasGas = false;
 
         this.timer;
         this.orientacao = 0;
@@ -73,9 +76,27 @@ class Personagem {
     }
 
     move(movimenta = true) {
+        movimenta = !this.checkColisao();
         this.timer = setInterval(() => {
             this.triggerMove(movimenta);
         }, this.timeToMove / (this.spriteQuadros * this.passosPerMove + 1));
+    }
+
+    checkColisao(){
+        switch (this.orientacao) {
+            case 0: //baixo
+                return !this.mapa[this.y + 1][this.x] || this.mapa[this.y + 1][this.x] == "x";
+                break;
+            case 1: //direita
+                return !this.mapa[this.y][this.x -1] || this.mapa[this.y][this.x -1]  == "x";
+                break;
+            case 2: //cima
+                return !this.mapa[this.y -1][this.x] || this.mapa[this.y -1][this.x]  == "x";
+                break;
+            case 3: // esquerda
+                return !this.mapa[this.y][this.x + 1] || this.mapa[this.y][this.x + 1]  == "x";
+                break;
+        }
     }
 
     triggerMove(movimenta) {
@@ -101,9 +122,53 @@ class Personagem {
             this.quadro = 0;
             this.x = Math.round(this.x);
             this.y = Math.round(this.y);
+            this.checkForItem();
             this.draw();
             clearInterval(this.timer);
         }
+    }
+
+    checkForItem(){
+        if(this.mapa[this.y][this.x] == "g" && itens[this.y][this.x]){
+            this.mapa[this.y][this.x] == "o"
+            this.hasGas = true;
+            itens[this.y][this.x].hide();
+            itens[this.y][this.x] = null;
+        }
+
+        if(this.mapa[this.y][this.x] == "f" && itens[this.y][this.x]){
+            if(this.hasGas){
+                this.mapa[this.y][this.x] == "o"
+                this.clear = true;
+                itens[this.y][this.x].children(".sprite").css("background-image",'url("../assets/rocket_launch.gif")');
+                fly(itens[this.y][this.x]);
+                itens[this.y][this.x] = null;
+                this.$personagem.hide();
+            }
+            
+        }
+    }
+
+    executeCommandos(commands){
+        this.hasCommand = true;
+        this.iterator = makeCommandIterator(commands);
+        let actions = setInterval(() => {
+            let command = this.iterator.next();
+            if(this.clear || command.done){
+                clearInterval(actions)
+                this.hasCommand = false;
+            } 
+            else{
+                switch(command.value){
+                    case "step":
+                        this.move();
+                        break;
+                    case "turn":
+                        this.rotate();
+                        break;
+                }
+            }
+        }, this.timePerCommand);
     }
 
     draw() {
@@ -111,4 +176,88 @@ class Personagem {
         this.$personagem.css("top", this.y * this.tileSize);
         this.$personagem.css("left", this.x * this.tileSize);
     }
+}
+
+function fly(sprite){
+    time = 0;
+    const interval = setInterval(() => {
+        if(time > 20000){
+            clearInterval(interval);
+            sprite.hide();
+        }
+        const top = sprite.css("top");
+        sprite.css("top", (Number(top.substr(0,top.length -2)) - 3) + "px");
+        time += 100;
+    }, 100);
+
+}
+
+function makeCommandIterator(command,start = 0, end = Infinity, step = 1) {
+    let i = 0;
+    let loop = null;
+    const rangeIterator = {
+       next: function() {
+            if(loop){
+               result = loop.next();
+               if(result.done) {
+                   i++;
+                   loop = null;
+                   return this.next();
+               }
+               else return result;
+            }
+            if(command[i] && command[i].command){
+                let comando = command[i].command;
+                i++;
+                return { value:comando,done:false};
+            }
+            if(command[i] && command[i].loop){
+                loop = makeLoopIterator(command[i].loop)
+                return this.next();
+            }
+        
+            return { value: i, done: true }
+       }
+    };
+    return rangeIterator;
+}
+
+function makeLoopIterator(loopInfo) {
+    console.log(loopInfo);
+    let iterations = loopInfo.iterations -1;
+    let command = loopInfo.commands;
+
+    let i = 0;
+    let loop = null;
+    const rangeIterator = {
+       next: function() {
+            if(loop){
+               result = loop.next();
+               if(result.done) {
+                   i++;
+                   loop = null;
+                   return this.next();
+               }
+               else return result;
+            }
+            if(command[i] && command[i].command){
+                let comando = command[i].command;
+                i++;
+                return { value:comando,done:false};
+            }
+            if(command[i] && command[i].loop){
+                loop = makeLoopIterator(command[i].loop)
+                return this.next();
+            }
+            if(iterations > 0){
+                iterations--;
+                console.log("aaaaaa")
+                i = 0;
+                return this.next();
+            }
+        
+        return { value: i, done: true }
+       }
+    };
+    return rangeIterator;
 }

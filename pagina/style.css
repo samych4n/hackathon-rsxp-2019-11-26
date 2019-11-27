@@ -97,6 +97,7 @@
   background-size: cover;
   background-image: url("assets/space.jpg");
   border-radius: 10px;
+  overflow: hidden;
 }
 
 .sup {

@@ -11,6 +11,5 @@ function refresh(levelName,refreshTime){
         });    
     }, refreshTime);
 
-    
 }
 refresh("level01",150);
