@@ -127,14 +127,6 @@
   z-index: 2; /* Places the panels in front of the prize */
   transition: all 0.6s ease-out; /* Animates the sliding transition */
 }
-
-.curtain__panel--left {
-  /* Styles for sliding the left panel */
-}
-
-.curtain__panel--right {
-  /* Styles for sliding the right panel */
-}
   
 .curtain__prize {
   background: #333;
