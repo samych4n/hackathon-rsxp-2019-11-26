@@ -42,19 +42,7 @@ function victory() {
 }
 
 function lose() {
-    console.log("lose");
     return refresh(levelSequence[levelAtual].level, 2000, 2);
-}
-
-
-function victory() {
-    console.log("victory")
-    refresh("level02", 4000, 1);
-}
-
-function lose() {
-    console.log("lose");
-    refresh("level01", 4000, 2);
 }
 
 function reset() {
