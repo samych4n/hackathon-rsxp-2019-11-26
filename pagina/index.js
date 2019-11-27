@@ -38,6 +38,7 @@ function refresh(levelName, refreshTime, gameStatus) {
           $(".curtain-text").hide();
           $(".curtain-text").css('background-color', 'transparent');
           $("#lbl_round_status").html("");
+          $("#lbl_fase_titulo").html(level.name);
           $(".curtainController").prop("checked", false);
         }
       });
