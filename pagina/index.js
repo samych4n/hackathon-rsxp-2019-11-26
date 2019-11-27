@@ -24,7 +24,7 @@ function refresh(levelName, refreshTime, gameStatus) {
     break;
     case 3: 
     $(".curtain-text").css('background-color', '#006600');
-    $("#lbl_round_status").html("Parabéns, astronauta!<br>Você está pronto para seguir<br>para o próximo nível!!!");
+    $("#lbl_round_status").html("Parabéns, astronauta!<br>Você está pronto para seguir<br>para o próximo nível!!!<br><a href='https://rocketseat.com.br/' target='_blank'>GO GO GO</a>");
     timer = 3000;
     break;
   }
