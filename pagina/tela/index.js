@@ -58,12 +58,12 @@ var commandos = [
 
     function victory(){
         console.log("victory")
-        refresh("level02",1000);
+        refresh("level02",4000, 1);
     }
 
     function lose(){
         console.log("lose");
-        refresh("level01",1000);
+        refresh("level01",4000, 2);
     }
     
 

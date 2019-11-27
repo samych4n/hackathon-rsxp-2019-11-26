@@ -48,7 +48,7 @@ class Personagem {
     }
 
     constructor($personagem, x, y, mapa) {
-        this.timePerCommand = 800;
+        this.timePerCommand = 600;
         this.clear = false;
         this.tileSize = 42;
         this.spriteWidth = 40;
@@ -58,11 +58,11 @@ class Personagem {
         this.hasCommand = false;
 
         this.passosPerMove = 2;
-        this.timeToMove = 600;
+        this.timeToMove = 400;
         this.hasGas = false;
 
         this.timer;
-        this.orientacao = 0;
+        this.orientacao = 3;
         this.x = x;
         this.y = y;
         this.$personagem = $personagem;
@@ -185,7 +185,7 @@ function fly(sprite){
             sprite.hide();
         }
         const top = sprite.css("top");
-        sprite.css("top", (Number(top.substr(0,top.length -2)) - 3) + "px");
+        sprite.css("top", (Number(top.substr(0,top.length -2)) - 15) + "px");
         time += 100;
     }, 100);
 

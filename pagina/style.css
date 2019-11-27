@@ -145,7 +145,25 @@
   width: 100%;
   height: 100%;
 }
-
+.curtain-text {
+  background: transparent;
+  position: absolute; /* Forces the prize position into the container start */
+  top: 0px;
+  left: 0px;
+  z-index: 2; /* Places the prize behind the panels, which are z-index 2 */
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+.curtain-text-label {
+  font-size: 72px;
+  font-weight: bold;
+  color: #ffffff;
+  text-align: center;
+  width: 100%;
+  height: 60%;
+  margin-top: 20%;
+}
 input[type="checkbox"] {
   position: absolute; /* Force the checkbox at the start of the container */
   cursor: pointer; /* Indicate the curtain is clickable */
