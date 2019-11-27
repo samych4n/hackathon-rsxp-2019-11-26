@@ -19,6 +19,7 @@ function refresh(levelName, refreshTime, gameStatus) {
     $("#lbl_round_status").html("Oops! Tente novamente.");
     break;
     case 3: 
+    $(".curtain-text").css('background-color', '#006600');
     $("#lbl_round_status").html("Parabéns, astronauta!<br>Você está pronto para seguir<br>para o próximo nível!!!");
     break;
   }
