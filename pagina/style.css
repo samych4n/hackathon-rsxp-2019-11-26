@@ -37,7 +37,7 @@
 
 .btn{
   padding: 2px 10px;
-  width: 80%;
+  width: 70px;
   border-radius: 6px;
   text-align: center;
   z-index: 9999;
@@ -167,4 +167,8 @@ input[type=checkbox]:checked ~ div.curtain__panel--right {
 /* Slide the panel to the right out of the container */
 .curtain__panel--right {
   transform: translateX(100%);
+}
+
+#draggable{
+  height: 353px;
 }

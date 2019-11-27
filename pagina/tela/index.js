@@ -36,7 +36,8 @@ var commandos = [
         itens = Item.createItem(board, $("#container"));
      
     }
-    function play(commandos){
+    function play(){
+        const commandos = createCommands($("#draggable"));
         personagens.forEach(personagem => {
             personagem.executeCommandos(commandos);
         });
