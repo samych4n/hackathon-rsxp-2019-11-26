@@ -1,0 +1,18 @@
+{
+    "name":"Level 7!",
+    "map":[
+        ["o", "o", "o", "p","o", "f"],
+        ["o", "x", "x", "o","x", "o"],
+        ["o", "x", "x", "o","x", "o"],
+        ["o", "x", "x", "o","x", "o"],
+        ["o", "x", "x", "o","x", "o"],
+        ["g", "o", "o", "o","o", "o"]
+    ],
+    "commands":[
+        "step",
+        "turn",
+        "loop",
+        "loop4"
+    ],
+    "orientacao":0
+}
