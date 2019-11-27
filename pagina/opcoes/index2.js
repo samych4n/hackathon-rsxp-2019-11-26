@@ -59,6 +59,14 @@ function createCommands($elem){
                 }
             })
         }
+        else if($( this ).hasClass("loop4-btn")){
+            command.push({
+                "loop":{
+                    "iterations":4,
+                    "commands":createCommands($( this ))
+                }
+            })
+        }
         else if($( this ).hasClass("turn-btn")){
             command.push({"command":"turn"})
         }

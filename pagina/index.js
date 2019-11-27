@@ -11,4 +11,9 @@ function refresh(levelName, refreshTime) {
     });
   }, refreshTime);
 }
-refresh("level01", 150);
+
+$.getJSON(`levels/levelSequence.json`, function(lvlsequence) {
+  levelSequence = lvlsequence;
+  levelAtual = 0;
+  refresh(levelSequence[levelAtual].level, 150);
+});
