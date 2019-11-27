@@ -11,9 +11,11 @@ function refresh(levelName, refreshTime, gameStatus) {
       $("#lbl_round_status").html("");
     break;
     case 1: 
+    $(".curtain-text").css('background-color', '#006600');
     $("#lbl_round_status").html("Parabéns, astronauta!<br>Você decolou!!!");
     break;
     case 2: 
+    $(".curtain-text").css('background-color', '#660000');
     $("#lbl_round_status").html("Oops! Tente novamente.");
     break;
     case 3: 
@@ -23,7 +25,7 @@ function refresh(levelName, refreshTime, gameStatus) {
   timer = theGGamestatus == 0 ? 0 : 3000;
   setTimeout(() => {
     $(".curtainController").prop("checked", true);
-    $(".curtain-text").fadeIn();
+    $(".curtain-text").fadeIn(3000);
     setTimeout(() => {
       $.getJSON(`levels/${levelName}.json`, function(lvl) {
         level = lvl;
@@ -31,6 +33,7 @@ function refresh(levelName, refreshTime, gameStatus) {
         $("#opcoes").load("./opcoes");
         $("#tela").load("./tela");
         $(".curtain-text").hide();
+        $(".curtain-text").css('background-color', 'transparent');
         $("#lbl_round_status").html("");
         $(".curtainController").prop("checked", false);
         $("#codigo").load("./codigo");

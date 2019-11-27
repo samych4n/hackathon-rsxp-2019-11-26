@@ -146,7 +146,7 @@
   height: 100%;
 }
 .curtain-text {
-  background: transparent;
+  background-color: transparent;
   position: absolute; /* Forces the prize position into the container start */
   top: 0px;
   left: 0px;
